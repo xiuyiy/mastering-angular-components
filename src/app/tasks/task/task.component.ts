@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'mac-task',
@@ -6,11 +6,6 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./task.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class TaskComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class TaskComponent {
+  @Input() task: any;
 }
