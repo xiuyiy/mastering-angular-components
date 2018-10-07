@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'mac-task',
@@ -8,4 +8,9 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 })
 export class TaskComponent {
   @Input() task: any;
+
+  @HostBinding('class.done')
+  get done() {
+    return this.task && this.task.done;
+  }
 }
