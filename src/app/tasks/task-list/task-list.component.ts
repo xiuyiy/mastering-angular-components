@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'mac-task-list',
@@ -6,16 +6,16 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./task-list.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class TaskListComponent implements OnInit {
+export class TaskListComponent {
   tasks = [
-    {id: 1, title: 'Task 1', done: false},
-    {id: 2, title: 'Task 2', done: true}
+    { title: 'Task 1', done: false },
+    { title: 'Task 2', done: true }
   ];
-  constructor() {
 
-  }
-
-  ngOnInit() {
+  addTask(title: string) {
+    this.tasks.push({
+      title, done: false
+    });
   }
 
 }

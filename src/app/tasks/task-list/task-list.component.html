@@ -1,2 +1,5 @@
+<mac-enter-task (outEnterTask)="addTask($event)"></mac-enter-task>
 <!-- input the task to the task variable in the task.component.ts -->
-<mac-task *ngFor="let task of tasks" [task]="task"></mac-task>
+<div class="tasks">
+  <mac-task *ngFor="let task of tasks" [task]="task"></mac-task>
+</div>

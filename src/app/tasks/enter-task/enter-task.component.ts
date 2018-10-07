@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Output, ViewEncapsulation, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'mac-enter-task',
@@ -6,11 +6,12 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./enter-task.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class EnterTaskComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+export class EnterTaskComponent {
+  @Output() outEnterTask = new EventEmitter<string>();
+  enterTask(titleInput: HTMLInputElement) {
+    this.outEnterTask.emit(titleInput.value);
+    titleInput.value = '';
+    titleInput.focus();
   }
 
 }
